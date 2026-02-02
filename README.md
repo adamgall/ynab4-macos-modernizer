@@ -19,7 +19,7 @@ To run the shell script, do the following:
 
 1. Press `Command (⌘) + Space`
 2. Type `Terminal` and press Enter
-3. Copy and paste the following into the terminal window and press Enter (be sure to include the ending quote). The script explains what it will do and then pauses before it does it.
+3. Copy and paste the following into the terminal window and press Enter. The script explains what it will do and then pauses before it does it.
 
    ```/bin/sh -c "$(curl -fsSL https://raw.githubusercontent.com/adamgall/ynab4-macos-modernizer/main/install)"```
 
