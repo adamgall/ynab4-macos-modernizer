@@ -35,19 +35,6 @@ OUTPUT_APP_NAME="YNAB 4 Remix" /bin/sh -c "$(curl -fsSL https://raw.githubuserco
 
 Tip: launch the app by double‑clicking it in Finder (or Launchpad). Avoid running `YNAB 4.app/Contents/MacOS/YNAB 4` directly from a terminal — some sandboxed terminal environments can interfere with LaunchServices and cause startup crashes.
 
-## Troubleshooting
-
-If you see either of these errors when trying to open the app:
-- “This application is damaged and can’t be opened…”
-- “This application requires a version of Adobe AIR which cannot be found…”
-
-Try clearing extended attributes and re-signing (this does **not** give you a trusted developer signature; it just makes the bundle internally consistent after patching):
-
-```sh
-xattr -cr "/Applications/YNAB 4.app"
-codesign --force --deep --sign - "/Applications/YNAB 4.app"
-```
-
 ## How It Works
 
 YNAB 4 is not written in a compiled language. It is written in ActionScript and interpreted by the Adobe AIR runtime when you run the program. As a result, it is the Adobe AIR runtime that needs to be updated, not the ActionScript. The final release of YNAB 4 is packaged with a 32-bit AIR runtime and 32-bit native extensions; this script patches the app to `x86_64` and then embeds a modern HARMAN Adobe AIR runtime in the resulting bundle.
