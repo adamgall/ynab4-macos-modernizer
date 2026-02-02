@@ -4,14 +4,14 @@
 # SHELL SCRIPT VERSION: 2.0
 # 64-BIT APP VERSION: 2.0
 
-APP_URL1="https://classic.youneedabudget.com/CDNOrigin/download/ynab4/liveCaptive/Mac/YNAB4_LiveCaptive_4.3.855.dmg"
-APP_URL2="https://web.archive.org/web/20190613044706/https://classic.youneedabudget.com/CDNOrigin/download/ynab4/liveCaptive/Mac/YNAB4_LiveCaptive_4.3.855.dmg"
+APP_URL1="https://web.archive.org/web/20190112221234/https://classic.youneedabudget.com/CDNOrigin/download/ynab4/liveCaptive/Mac/YNAB4_LiveCaptive_4.3.855.dmg"
+APP_URL2="https://web.archive.org/web/20181213215709/https://classic.youneedabudget.com/CDNOrigin/download/ynab4/liveCaptive/Mac/YNAB4_LiveCaptive_4.3.855.dmg"
 APP_FILE="YNAB4_LiveCaptive_4.3.855.dmg"
 APP_SIZE="28MB"
 APP_MD5="e37d666b2cf1aa718c78534b1a1ffdc9"
 
-AIR_URL1="http://download.macromedia.com/air/mac/download/32.0/AdobeAIR.dmg"
-AIR_URL2="https://web.archive.org/web/20190623201904/http://fpdownload.macromedia.com/air/mac/download/32.0/AdobeAIR.dmg"
+AIR_URL1="https://web.archive.org/web/20190623201904/http://fpdownload.macromedia.com/air/mac/download/32.0/AdobeAIR.dmg"
+AIR_URL2="http://download.macromedia.com/air/mac/download/32.0/AdobeAIR.dmg"
 AIR_FILE="AdobeAIR.dmg"
 AIR_SIZE="20MB"
 AIR_MD5="ab54e66e43ccd463d3b582b854afd27c"
