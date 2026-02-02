@@ -21,7 +21,7 @@ To run the shell script, do the following:
 2. Type `Terminal` and press Enter
 3. Copy and paste the following into the terminal window and press Enter (be sure to include the ending quote). The script explains what it will do and then pauses before it does it.
 
-   ```/bin/sh -c "$(curl -fsSL https://YOUR-REPO-HERE/raw/main/install)"```
+   ```/bin/sh -c "$(curl -fsSL https://raw.githubusercontent.com/adamgall/ynab4-macos-modernizer/main/install)"```
 
 4. When the shell script is complete, you must drag the resulting app to your `/Applications` directory to install.
 
@@ -30,7 +30,7 @@ Tip: if you already have an older patched `YNAB 4.app`, rename it first (e.g. `Y
 Tip: to avoid overwriting an existing install, you can set `OUTPUT_APP_NAME` to build a differently-named app bundle:
 
 ```sh
-OUTPUT_APP_NAME="YNAB 4 Remix" /bin/sh -c "$(curl -fsSL https://YOUR-REPO-HERE/raw/main/install)"
+OUTPUT_APP_NAME="YNAB 4 Remix" /bin/sh -c "$(curl -fsSL https://raw.githubusercontent.com/adamgall/ynab4-macos-modernizer/main/install)"
 ```
 
 Tip: launch the app by double‑clicking it in Finder (or Launchpad). Avoid running `YNAB 4.app/Contents/MacOS/YNAB 4` directly from a terminal — some sandboxed terminal environments can interfere with LaunchServices and cause startup crashes.
