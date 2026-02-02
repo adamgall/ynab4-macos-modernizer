@@ -11,7 +11,7 @@ You will still need a valid license key to use the app.
 
 This shell script is not affiliated with YNAB in any way and YNAB has not endorsed this at all. YNAB has [offically ended support](https://web.archive.org/web/20191008235951/https://www.youneedabudget.com/ynab-4-support-will-end-october-2019/) for YNAB 4. Do not contact them with support requests of any kind with respect to this shell script or using YNAB 4 on macOS Catalina. You are on your own and you use at your own risk.
 
-This project is based on [bradleymiller/Y64](https://gitlab.com/bradleymiller/Y64), but updated to produce the “final” modern-runtime result without renaming the app.
+This project is based on [bradleymiller/Y64](https://gitlab.com/bradleymiller/Y64), but updated to produce the “final” modern-runtime result.
 
 ## Usage
 
