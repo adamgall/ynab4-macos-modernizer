@@ -134,6 +134,23 @@ mv "$APP_DIR/Contents/Resources/META-INF/AIR/extensions/mac/META-INF/ANE/MacOS-x
 MAC_PATH="$APP_DIR/Contents/Resources/META-INF/AIR/extensions/mac/META-INF/ANE/MacOS-x86-64/MacUtilsNativeExtension.framework/Versions/A"
 echo "$MACPATCH" | xxd -r -p - > "$PATCH"
 bspatch "$MAC_PATH/MacUtilsNativeExtension" "$MAC_PATH/MacUtilsNativeExtension" "$PATCH"
+
+# Fix crash in some file-chooser paths (MacUtilsNativeExtension getNSString:)
+MACUTILS_PRE_FIX_MD5="ff7a46b0f8e2b58231fe15d634e3424e"
+MACUTILS_POST_FIX_MD5="6ffbfc91a6ef465388e30e2e30219b22"
+MACUTILS_FIX_OFFSET=$((0x13ca))
+MACUTILS_FIX_HEX="554889e54883ec184889d7488d75f4488d55e8e80208000085c0751a488b3d231f0000488b55e8488b35f81d0000ff150a0c0000c9c331c0c9c3"
+
+MACUTILS_MD5=$(md5 -q "$MAC_PATH/MacUtilsNativeExtension")
+if [ "$MACUTILS_MD5" = "$MACUTILS_PRE_FIX_MD5" ]; then
+  echo "> Applying MacUtilsNativeExtension crash fix"
+  echo "$MACUTILS_FIX_HEX" | xxd -r -p | dd of="$MAC_PATH/MacUtilsNativeExtension" bs=1 seek="$MACUTILS_FIX_OFFSET" conv=notrunc >/dev/null 2>&1 || true
+  MACUTILS_MD5=$(md5 -q "$MAC_PATH/MacUtilsNativeExtension")
+  if [ "$MACUTILS_MD5" != "$MACUTILS_POST_FIX_MD5" ]; then
+    echo "WARNING: MacUtilsNativeExtension crash fix did not apply cleanly (md5=$MACUTILS_MD5)"
+  fi
+fi
+
 rm -rf "$MAC_PATH/Resources/English.lproj"
 rm -rf "$MAC_PATH/_CodeSignature"
 
